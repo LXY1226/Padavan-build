@@ -62,6 +62,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_QOS/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DOGCOM/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config
         ######################################################################
         #以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
         ######################################################################
@@ -91,7 +92,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> .config # QoS
         # echo "CONFIG_FIRMWARE_CPU_SLEEP=y" >> .config # Power-Save
         echo "CONFIG_FIRMWARE_INCLUDE_DOGCOM=n" >> .config # Power-Save
-      
+        echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=y" >> .config # QoS
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
         #格式如下：
